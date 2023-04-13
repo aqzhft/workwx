@@ -3,17 +3,17 @@ package cc.powind.workwx.core;
 import cc.powind.workwx.exception.RestException;
 
 /**
- * 返回值 基础类
+ * general response from weixin server
  */
 public class BaseResponse {
 
     /**
-     * 错误码
+     * error code
      */
     private Integer errcode;
 
     /**
-     * 错误信息
+     * error message
      */
     private String errmsg;
 

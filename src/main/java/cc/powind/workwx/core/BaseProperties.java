@@ -3,12 +3,13 @@ package cc.powind.workwx.core;
 public class BaseProperties {
 
     /**
-     * 接口地址
+     * weixin remote server address
      */
     private String host = "https://qyapi.weixin.qq.com";
 
     /**
-     * 部门根节点
+     * root dept id
+     * everyone in the weixin need a dept id
      */
     private Long rootDeptId = 1L;
 

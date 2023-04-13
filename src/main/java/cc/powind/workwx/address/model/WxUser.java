@@ -7,58 +7,40 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 用户
- */
-public class User {
+public class WxUser {
 
     /**
-     * 唯一标识
+     * unique id
      */
     private String userid;
 
-    /**
-     * 姓名
-     */
     private String name;
 
     /**
-     * 昵称
+     * nickname
      */
     private String alias;
 
-    /**
-     * 手机
-     */
     private String mobile;
 
-    /**
-     * 部门
-     */
     private Long[] department;
 
     /**
-     * 部门内的排序
+     * department order
      */
     private Long[] order;
 
-    /**
-     * 职务信息
-     */
     private String position;
 
     /**
-     * 性别 1-男性 2-女性
+     * gender 1 male 2 female
      */
     private Integer gender;
 
-    /**
-     * 邮箱
-     */
     private String email;
 
     /**
-     * 座机
+     * telephone
      */
     private String telephone;
 
@@ -68,24 +50,11 @@ public class User {
     private Long[] isLeaderInDept;
 
     /**
-     * 头像
+     * avatar
      */
     private String avatarMediaid;
 
-    /**
-     * 启用/禁用
-     */
     private Integer enable;
-
-    /**
-     * 头像（查询值）
-     */
-    private String avatar;
-
-    /**
-     * 头像缩略图（查询值）
-     */
-    private String thumbAvatar;
 
     public String getUserid() {
         return userid;
@@ -196,27 +165,27 @@ public class User {
         Map<String, String> errs = new HashMap<>();
 
         if (StringUtils.isBlank(userid)) {
-            errs.put("userid", "用户编号不能为空！");
+            errs.put("userid", "用户编号不能为空");
         }
 
         if (userid != null && userid.length() > 64) {
-            errs.put("useridLength", "用户编号长度过长！");
+            errs.put("useridLength", "用户编号长度过长");
         }
 
         if (StringUtils.isBlank(name)) {
-            errs.put("name", "用户名称不能为空！");
+            errs.put("name", "用户名称不能为空");
         }
 
         if (name != null && name.length() > 64) {
-            errs.put("nameLength", "用户名称长度过长！");
+            errs.put("nameLength", "用户名称长度过长");
         }
 
         if (ArrayUtils.isEmpty(department)) {
-            errs.put("department", "用户所属部门不能为空！");
+            errs.put("department", "用户所属部门不能为空");
         }
 
         if (StringUtils.isBlank(mobile) && StringUtils.isBlank(email)) {
-            errs.put("mobileEmail", "手机号和邮箱地址不能同时为空！");
+            errs.put("mobileEmail", "手机号和邮箱地址不能同时为空");
         }
 
         return errs;
@@ -224,20 +193,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userid='" + userid + '\'' +
-                ", name='" + name + '\'' +
-                ", alias='" + alias + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", department=" + Arrays.toString(department) +
-                ", order=" + Arrays.toString(order) +
-                ", position='" + position + '\'' +
-                ", gender=" + gender +
-                ", email='" + email + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", isLeaderInDept=" + Arrays.toString(isLeaderInDept) +
-                ", avatarMediaid='" + avatarMediaid + '\'' +
-                ", enable=" + enable +
-                '}';
+        return "User{" + "userid='" + userid + '\'' + ", name='" + name + '\'' + ", alias='" + alias + '\'' + ", mobile='" + mobile + '\'' +
+                ", department=" + Arrays.toString(department) + ", order=" + Arrays.toString(order) + ", position='" + position + '\'' + ", gender=" + gender + ", email='" + email + '\'' +
+                ", telephone='" + telephone + '\'' + ", isLeaderInDept=" + Arrays.toString(isLeaderInDept) + ", avatarMediaid='" + avatarMediaid + '\'' + ", enable=" + enable + '}';
     }
 }

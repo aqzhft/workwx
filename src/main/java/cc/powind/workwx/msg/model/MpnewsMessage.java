@@ -62,7 +62,7 @@ public class MpnewsMessage extends Message {
         // 标题
         private String title;
 
-        // 图片
+        // 图片 企业微信内部文件ID
         private String thumbMediaId;
 
         // 作者

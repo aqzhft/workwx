@@ -1,11 +1,7 @@
 package cc.powind.workwx.msg.model;
 
-/**
- * 语音 消息
- */
 public class VoiceMessage extends Message {
 
-    // 消息体
     private Voice voice;
 
     public VoiceMessage(String mediaId) {
@@ -25,6 +21,9 @@ public class VoiceMessage extends Message {
 
     private static class Voice {
 
+        /**
+         * 企业微信内部文件ID
+         */
         private String mediaId;
 
         Voice(String mediaId) {

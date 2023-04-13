@@ -2,20 +2,20 @@ package cc.powind.workwx.address.model;
 
 import java.util.Arrays;
 
-public class UserResponse {
+public class WxUserResponse {
 
     /**
-     * 唯一标识
+     * unique id
      */
     private String userid;
 
     /**
-     * 姓名
+     * name
      */
     private String name;
 
     /**
-     * 手机
+     * mobile phone
      */
     private String mobile;
 
@@ -35,7 +35,7 @@ public class UserResponse {
     private String position;
 
     /**
-     * 性别：0 未定义 1 男 2 女
+     * gender：0 not defined 1 male 2 female
      */
     private String gender;
 

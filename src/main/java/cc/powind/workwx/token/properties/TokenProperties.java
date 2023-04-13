@@ -8,12 +8,12 @@ import java.util.List;
 public class TokenProperties {
 
     /**
-     * 企业ID
+     * corp id
      */
     private String corpId;
 
     /**
-     * 应用列表
+     * app list
      */
     private List<App> appList = new ArrayList<>();
 

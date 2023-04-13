@@ -1,17 +1,15 @@
 package cc.powind.workwx.address;
 
-import cc.powind.workwx.address.model.User;
-import cc.powind.workwx.address.model.UserResponse;
-import cc.powind.workwx.address.service.UserService;
+import cc.powind.workwx.address.model.WxUser;
+import cc.powind.workwx.address.model.WxUserResponse;
+import cc.powind.workwx.address.service.WxUserService;
 import cc.powind.workwx.core.RestClient;
 import cc.powind.workwx.token.TokenServiceTest;
 import org.junit.Test;
 
-import java.util.List;
-
 public class UserServiceTest {
 
-    private static final UserService service = new UserService();
+    private static final WxUserService service = new WxUserService();
 
     static {
         RestClient restClient = TokenServiceTest.getRestClient();
@@ -21,7 +19,7 @@ public class UserServiceTest {
     @Test
     public void insert() {
 
-        User user = new User();
+        WxUser user = new WxUser();
         user.setUserid("test2");
         user.setAlias("测试");
         user.setName("测试账号");
@@ -34,7 +32,7 @@ public class UserServiceTest {
     @Test
     public void update() {
 
-        User user = new User();
+        WxUser user = new WxUser();
         user.setUserid("test");
         user.setAlias("测试1");
         user.setName("测试账号1");
@@ -56,19 +54,7 @@ public class UserServiceTest {
 
     @Test
     public void find() {
-        UserResponse user = service.find("test");
+        WxUserResponse user = service.find("test");
         System.out.println(user);
-    }
-
-    @Test
-    public void findByDeptId() {
-        List<User> userList = service.findByDeptId(1L);
-        System.out.println(userList);
-    }
-
-    @Test
-    public void findByDeptIdAndSubDept() {
-        List<User> userList = service.findByDeptId(1L, 1);
-        System.out.println(userList);
     }
 }

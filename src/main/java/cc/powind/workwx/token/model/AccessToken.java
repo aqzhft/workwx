@@ -2,23 +2,20 @@ package cc.powind.workwx.token.model;
 
 import java.time.Instant;
 
-/**
- * 令牌
- */
 public class AccessToken {
 
     /**
-     * 令牌
+     * token value
      */
     private String accessToken;
 
     /**
-     * 创建时间
+     * when create the token
      */
     private Instant createTime;
 
     /**
-     * 过期时间
+     * expire time, the unit is second
      */
     private long expiresIn = 0;
 
@@ -28,8 +25,8 @@ public class AccessToken {
 
     public boolean isExpired() {
 
-        // 时间可能有偏差，提前一分钟
-        return createTime.plusSeconds(expiresIn - 60).isBefore(Instant.now());
+        // time may be off, require early handle
+        return createTime.plusSeconds(expiresIn - 30).isBefore(Instant.now());
     }
 
     public String getAccessToken() {

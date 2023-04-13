@@ -1,11 +1,7 @@
 package cc.powind.workwx.msg.model;
 
-/**
- * 视频 消息
- */
 public class VideoMessage extends Message {
 
-    // 消息体
     private Video voice;
 
     public VideoMessage(String mediaId) {
@@ -25,6 +21,9 @@ public class VideoMessage extends Message {
 
     private static class Video {
 
+        /**
+         * 企业微信内部文件ID
+         */
         private String mediaId;
 
         Video(String mediaId) {

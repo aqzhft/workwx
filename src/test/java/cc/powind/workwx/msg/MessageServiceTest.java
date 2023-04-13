@@ -2,6 +2,7 @@ package cc.powind.workwx.msg;
 
 import cc.powind.workwx.app.AppEnum;
 import cc.powind.workwx.base.DefaultRestClient;
+import cc.powind.workwx.msg.model.MarkdownMessage;
 import cc.powind.workwx.msg.model.TextMessage;
 import cc.powind.workwx.msg.model.TextcardMessage;
 import cc.powind.workwx.token.properties.TokenProperties;
@@ -47,8 +48,21 @@ public class MessageServiceTest {
 
     @Test
     public void sendTextCardMessage() {
+
+        // 插件里显示的效果很差，按钮无法显示，但是可以跳转（凑合着用）
+
         TextcardMessage.Textcard textcard = new TextcardMessage.Textcard("检查通知", "JX120923", "http://www.baidu.com", "详情");
         TextcardMessage message = new TextcardMessage(textcard);
+        message.setTouser("1");
+        messageService.send(AppEnum.ASSISTANT.name(), message);
+    }
+
+    @Test
+    public void sendMarkdownMessage() {
+
+        // 只有企业微信可以用，插件不可用
+
+        MarkdownMessage message = new MarkdownMessage("<font color=\"info\">广州TIT 1楼 301</font>");
         message.setTouser("1");
         messageService.send(AppEnum.ASSISTANT.name(), message);
     }

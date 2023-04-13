@@ -1,11 +1,7 @@
 package cc.powind.workwx.msg.model;
 
-/**
- * 图片消息
- */
 public class ImageMessage extends Message {
 
-    // 消息体
     private Image image;
 
     public ImageMessage(String mediaId) {
@@ -23,11 +19,11 @@ public class ImageMessage extends Message {
         this.image = image;
     }
 
-    /**
-     * 消息体
-     */
     private static class Image {
 
+        /**
+         * 企业微信内部的文件ID
+         */
         private String mediaId;
 
         Image (String mediaId) {
