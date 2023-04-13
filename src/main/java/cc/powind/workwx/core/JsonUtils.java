@@ -30,7 +30,7 @@ public class JsonUtils {
         try {
             return objectMapper.readValue(content, clazz);
         } catch (IOException e) {
-            throw new RuntimeException("json解析异常！", e);
+            throw new RuntimeException("json parse error", e);
         }
     }
 
@@ -38,7 +38,7 @@ public class JsonUtils {
         try {
             return objectMapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("json序列化异常！", e);
+            throw new RuntimeException("json serialize error", e);
         }
     }
 }

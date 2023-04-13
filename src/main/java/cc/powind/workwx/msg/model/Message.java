@@ -5,25 +5,12 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 消息 基类
- */
-public class Message {
+public abstract class Message {
 
     /**
      * 接收人
      */
     private String touser;
-
-    /**
-     * 接收部门
-     */
-    private String toparty;
-
-    /**
-     * 接收标签
-     */
-    private String totag;
 
     /**
      * 消息类型
@@ -62,22 +49,6 @@ public class Message {
 
     public void setTouser(String touser) {
         this.touser = touser;
-    }
-
-    public String getToparty() {
-        return toparty;
-    }
-
-    public void setToparty(String toparty) {
-        this.toparty = toparty;
-    }
-
-    public String getTotag() {
-        return totag;
-    }
-
-    public void setTotag(String totag) {
-        this.totag = totag;
     }
 
     public String getMsgtype() {
@@ -125,15 +96,15 @@ public class Message {
         Map<String, String> errs = new HashMap<>();
 
         if (agentid == null) {
-            errs.put("agentid", "应用ID不能为空！");
+            errs.put("agentid", "应用ID不能为空");
         }
 
         if (StringUtils.isBlank(msgtype)) {
-            errs.put("msgtype", "消息类型不能为空！");
+            errs.put("msgtype", "消息类型不能为空");
         }
 
-        if (StringUtils.isBlank(toparty) && StringUtils.isBlank(touser) && StringUtils.isBlank(totag)) {
-            errs.put("to", "接收部门、人员、标签不能同时为空！");
+        if (StringUtils.isBlank(touser)) {
+            errs.put("to", "接收人不能为空");
         }
 
         return errs;

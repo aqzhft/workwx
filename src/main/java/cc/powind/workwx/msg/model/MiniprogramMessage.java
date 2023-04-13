@@ -2,14 +2,8 @@ package cc.powind.workwx.msg.model;
 
 import java.util.List;
 
-/**
- * 小程序 消息
- */
 public class MiniprogramMessage extends Message {
 
-    /**
-     * 消息体
-     */
     private MiniprogramNotice miniprogramNotice;
 
     public MiniprogramMessage(MiniprogramNotice miniprogramNotice) {
@@ -33,10 +27,8 @@ public class MiniprogramMessage extends Message {
         // 跳转页面
         private String page;
 
-        // 标题
         private String title;
 
-        // 描述
         private String description;
 
         // 是否放大第一个contentItem

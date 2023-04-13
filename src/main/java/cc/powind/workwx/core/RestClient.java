@@ -7,6 +7,4 @@ public interface RestClient {
     void get(String agentCode, String path);
 
     void post(String agentCode, String path, Object object);
-
-    <T> T post(String agentCode, String path, Object object, Class<T> responseType);
 }

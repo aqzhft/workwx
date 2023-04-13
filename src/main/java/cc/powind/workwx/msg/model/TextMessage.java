@@ -1,11 +1,7 @@
 package cc.powind.workwx.msg.model;
 
-/**
- * 文本消息
- */
 public class TextMessage extends Message {
 
-    // 消息体
     private Text text;
 
     // 是否转义 1 是 0 否（默认）

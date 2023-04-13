@@ -2,12 +2,8 @@ package cc.powind.workwx.msg.model;
 
 import java.util.List;
 
-/**
- * 图文 消息
- */
 public class NewsMessage extends Message {
 
-    // 消息体
     private News news;
 
     public NewsMessage(List<Article> articles) {

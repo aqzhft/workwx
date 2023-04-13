@@ -5,7 +5,6 @@ package cc.powind.workwx.msg.model;
  */
 public class TextcardMessage extends Message {
 
-    // 消息体
     private Textcard textcard;
 
     public TextcardMessage(Textcard textcard) {
@@ -25,10 +24,8 @@ public class TextcardMessage extends Message {
 
     public static class Textcard {
 
-        // 标题
         private String title;
 
-        // 描述
         private String description;
 
         // 跳转的地址

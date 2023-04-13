@@ -63,17 +63,12 @@ public abstract class AbstractRestClient implements RestClient {
         execute(agentCode, "POST", path, object, null);
     }
 
-    @Override
-    public <T> T post(String agentCode, String path, Object object, Class<T> responseType) {
-        return execute(agentCode, "POST", path, object, responseType);
-    }
-
     protected void validateResponse(String valueText) {
 
         BaseResponse baseResponse = readValue(valueText, BaseResponse.class);
 
         if (baseResponse == null) {
-            throw new RestException("接口调用返回值为空！");
+            throw new RestException("接口调用返回值为空");
         }
 
         baseResponse.validate();

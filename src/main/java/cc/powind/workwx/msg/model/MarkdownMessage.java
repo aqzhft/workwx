@@ -1,11 +1,7 @@
 package cc.powind.workwx.msg.model;
 
-/**
- * markdown格式 消息
- */
 public class MarkdownMessage extends Message {
 
-    // 消息体
     private Markdown markdown;
 
     public MarkdownMessage(String content) {
@@ -25,7 +21,6 @@ public class MarkdownMessage extends Message {
 
     private static class Markdown {
 
-        // 内容
         private String content;
 
         Markdown (String content) {
