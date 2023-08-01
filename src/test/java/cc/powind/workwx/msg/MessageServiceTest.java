@@ -51,8 +51,17 @@ public class MessageServiceTest {
 
         // 插件里显示的效果很差，按钮无法显示，但是可以跳转（凑合着用）
 
-        TextcardMessage.Textcard textcard = new TextcardMessage.Textcard("检查通知", "JX120923", "http://www.baidu.com", "详情");
+        // TextcardMessage.Textcard textcard = new TextcardMessage.Textcard("检查通知", "JX120923", "http://www.baidu.com", "详情");
+        // TextcardMessage message = new TextcardMessage(textcard);
+
+        // 样式在微信插件里没啥用
+
+        String description = "<div>申请编号：JY2304298</div><div>批次号：219412545214</div><div>紧急货物运输 </div><div>申请人：张三 申请时间：2023-12-12 12:21</div><div class=\"highlight\">加急</div>";
+        String url = "http://www.baidu.com";
+
+        TextcardMessage.Textcard textcard = new TextcardMessage.Textcard("新的运输申请", description, url, "详情");
         TextcardMessage message = new TextcardMessage(textcard);
+
         message.setTouser("1");
         messageService.send(AppEnum.ASSISTANT.name(), message);
     }

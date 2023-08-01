@@ -13,7 +13,7 @@ public class WxUserService {
 
     private RestClient restClient;
 
-    private final static Long rootDeptId = 1L;
+    private Long rootDeptId = 1L;
 
     public RestClient getRestClient() {
         return restClient;
@@ -21,6 +21,14 @@ public class WxUserService {
 
     public void setRestClient(RestClient restClient) {
         this.restClient = restClient;
+    }
+
+    public Long getRootDeptId() {
+        return rootDeptId;
+    }
+
+    public void setRootDeptId(Long rootDeptId) {
+        this.rootDeptId = rootDeptId;
     }
 
     public void insert(WxUser model) {

@@ -1,5 +1,6 @@
 package cc.powind.workwx.config;
 
+import cc.powind.workwx.address.service.WxUserService;
 import cc.powind.workwx.base.DefaultRestClient;
 import cc.powind.workwx.core.RestClient;
 import cc.powind.workwx.msg.MessageService;
@@ -33,5 +34,13 @@ public class WorkwxConfiguration {
         messageService.setProperties(properties.getToken());
 
         return messageService;
+    }
+
+    @Bean
+    public WxUserService wxUserService() {
+        WxUserService service = new WxUserService();
+        service.setRestClient(restClient());
+        service.setRootDeptId(properties.getBase().getRootDeptId());
+        return service;
     }
 }
